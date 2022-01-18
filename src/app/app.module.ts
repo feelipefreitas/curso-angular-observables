@@ -3,13 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { Comp1Component } from './pages/comp1/comp1.component';
+import { Comp2Component } from './pages/comp2/comp2.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    Comp1Component,
+    Comp2Component,
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

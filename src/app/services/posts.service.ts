@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, Observer, of, throwError } from "rxjs";
 import { IPost } from "../interfaces/post.interface";
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -24,8 +25,30 @@ export class PostsService {
 
     constructor(private _http: HttpClient) { }
 
+    getPostHTTPERROR(): Observable<IPost> {
+        return this._http.get<IPost>('https://jsonplaceholder.typicode.com/posts/1').pipe(
+            map((postResponse) => {
+                postResponse.teste = 'MANIPULADO';
+                return postResponse;
+            }),
+            catchError((error) => {
+                // return of({} as IPost);
+                return throwError('OCORREU UM ERRO');
+            })
+        );
+    }
+
+    getPostHTTP(): Observable<IPost> {
+        return this._http.get<IPost>('https://jsonplaceholder.typicode.com/posts/1').pipe(
+            map((postResponse) => {
+                postResponse.teste = 'TESTE';
+
+                return postResponse;
+            })
+        );
+    }
+
     getPostsHTTP(): Observable<IPost[]> {
-        console.log('getPostsHTTP');
         // return throwError(new HttpErrorResponse({
         //     status: 500,
         //     error: {
@@ -38,7 +61,6 @@ export class PostsService {
     }
 
     getPostsCONSTRUCTOR(): Observable<IPost[]> {
-        console.log('getPostsCONSTRUCTOR');
         return new Observable((observer: Observer<IPost[]>) => {
             // observer.error('ERROR POSTS');
         
@@ -47,7 +69,6 @@ export class PostsService {
     }
 
     getPostsOF(): Observable<IPost[]> {
-        console.log('getPostsOF');
         // return throwError([]);
 
         return of(this.posts);
