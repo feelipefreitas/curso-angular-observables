@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, Observer, of, throwError } from "rxjs";
 import { IPost } from "../interfaces/post.interface";
-import { catchError, map } from 'rxjs/operators';
+import { catchError, delay, map } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -38,7 +38,9 @@ export class PostsService {
         );
     }
 
-    getPostHTTP(): Observable<IPost> {
+    getPostHTTP(text: string = ''): Observable<IPost> {
+        console.log(text);
+
         return this._http.get<IPost>('https://jsonplaceholder.typicode.com/posts/1').pipe(
             map((postResponse) => {
                 postResponse.teste = 'TESTE';
@@ -60,7 +62,8 @@ export class PostsService {
         return this._http.get<IPost[]>('https://jsonplaceholder.typicode.com/posts');
     }
 
-    getPostsCONSTRUCTOR(): Observable<IPost[]> {
+    getPostsCONSTRUCTOR(post: any): Observable<IPost[]> {
+        console.log('getPostsCONSTRUCTOR post', post)
         return new Observable((observer: Observer<IPost[]>) => {
             // observer.error('ERROR POSTS');
         
