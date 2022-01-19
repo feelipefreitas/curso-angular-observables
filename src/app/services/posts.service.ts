@@ -62,7 +62,7 @@ export class PostsService {
         return this._http.get<IPost[]>('https://jsonplaceholder.typicode.com/posts');
     }
 
-    getPostsCONSTRUCTOR(post: any): Observable<IPost[]> {
+    getPostsCONSTRUCTOR(post: any = {}): Observable<IPost[]> {
         console.log('getPostsCONSTRUCTOR post', post)
         return new Observable((observer: Observer<IPost[]>) => {
             // observer.error('ERROR POSTS');
@@ -72,6 +72,7 @@ export class PostsService {
     }
 
     getPostsOF(): Observable<IPost[]> {
+        console.log('getPostsOF()');
         // return throwError([]);
 
         return of(this.posts);

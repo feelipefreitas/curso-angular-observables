@@ -8,6 +8,7 @@ import { Comp1Component } from './pages/comp1/comp1.component';
 import { Comp2Component } from './pages/comp2/comp2.component';
 import { InputComponent } from './pages/input/input.component';
 import { InOrderComponent } from './pages/in-order/in-order.component';
+import { NgforAsyncComponent } from './pages/ngfor-async/ngfor-async.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +16,7 @@ import { InOrderComponent } from './pages/in-order/in-order.component';
     Comp2Component,
     InputComponent,
     InOrderComponent,
+    NgforAsyncComponent,
   ],
   imports: [
     BrowserModule,

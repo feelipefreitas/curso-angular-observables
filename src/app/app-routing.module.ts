@@ -4,6 +4,7 @@ import { Comp1Component } from './pages/comp1/comp1.component';
 import { Comp2Component } from './pages/comp2/comp2.component';
 import { InOrderComponent } from './pages/in-order/in-order.component';
 import { InputComponent } from './pages/input/input.component';
+import { NgforAsyncComponent } from './pages/ngfor-async/ngfor-async.component';
 
 const ROUTES: Routes = [
     {
@@ -26,6 +27,10 @@ const ROUTES: Routes = [
     {
         path: 'in-order',
         component: InOrderComponent
+    },
+    {
+        path: 'ngfor',
+        component: NgforAsyncComponent
     },
 ];
 
