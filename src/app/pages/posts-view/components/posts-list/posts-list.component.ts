@@ -14,6 +14,11 @@ export class PostsListComponent implements OnInit {
   constructor(private _postControllerService: PostControllerService) { }
 
   ngOnInit(): void {
+    console.log('PostsListComponent ngOnInit');
+
+    this._postControllerService.behaviorSubject.subscribe(
+      (value) => console.log('BEHAVIOR => ', value)
+    );
   }
 
   postSelected(postSelected: IPost) {

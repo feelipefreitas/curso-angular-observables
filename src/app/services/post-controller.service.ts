@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Subject } from "rxjs";
+import { BehaviorSubject, Subject } from "rxjs";
 import { IPost } from './../interfaces/post.interface';
 
 @Injectable({
@@ -7,6 +7,7 @@ import { IPost } from './../interfaces/post.interface';
 })
 export class PostControllerService {
     postSelectedSubject = new Subject<IPost>();
+    behaviorSubject = new BehaviorSubject(0);
 
     onPostSelected(postSelected: IPost) {
         if(!postSelected.id) {
@@ -14,5 +15,7 @@ export class PostControllerService {
         }
 
         this.postSelectedSubject.next(postSelected);
+
+        this.behaviorSubject.next(1);
     }
 }

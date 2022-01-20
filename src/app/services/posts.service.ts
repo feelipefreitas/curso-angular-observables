@@ -41,7 +41,7 @@ export class PostsService {
     getPostHTTP(text: string = ''): Observable<IPost> {
         console.log(text);
 
-        return this._http.get<IPost>('https://jsonplaceholder.typicode.com/posts/1').pipe(
+        return this._http.get<IPost>('https://jsonplaceuhsuhsuhholder.typicode.com/posts/1').pipe(
             map((postResponse) => {
                 postResponse.teste = 'TESTE';
 
@@ -68,6 +68,7 @@ export class PostsService {
             // observer.error('ERROR POSTS');
         
             observer.next(this.posts);
+            observer.complete();
         });
     }
 

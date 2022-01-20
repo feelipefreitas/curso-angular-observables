@@ -12,6 +12,7 @@ import { NgforAsyncComponent } from './pages/ngfor-async/ngfor-async.component';
 import { PostsViewComponent } from './pages/posts-view/posts-view.component';
 import { PostsListComponent } from './pages/posts-view/components/posts-list/posts-list.component';
 import { PostDetailsComponent } from './pages/posts-view/components/post-details/post-details.component';
+import { ObservablePromiseComponent } from './pages/observable-promise/observable-promise.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { PostDetailsComponent } from './pages/posts-view/components/post-details
     PostsViewComponent,
     PostsListComponent,
     PostDetailsComponent,
+    ObservablePromiseComponent,
   ],
   imports: [
     BrowserModule,
