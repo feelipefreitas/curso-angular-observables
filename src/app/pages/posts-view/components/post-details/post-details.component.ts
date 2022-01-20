@@ -21,6 +21,9 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
         console.log('postSelected', postSelected);
         
         this.postSelected = postSelected;
+      },
+      (error) => {
+        console.log(error);
       }
     );
   }
