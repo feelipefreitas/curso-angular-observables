@@ -9,8 +9,8 @@ export class PostControllerService {
     postSelectedSubject = new Subject<IPost>();
 
     onPostSelected(postSelected: IPost) {
-        if(postSelected.id) {
-            this.postSelectedSubject.error('Não houve nenhum post selecionado!');
+        if(!postSelected.id) {
+            this.postSelectedSubject.error('Não houve um post selecionado!');
         }
 
         this.postSelectedSubject.next(postSelected);
