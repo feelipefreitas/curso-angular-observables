@@ -9,6 +9,9 @@ import { Comp2Component } from './pages/comp2/comp2.component';
 import { InputComponent } from './pages/input/input.component';
 import { InOrderComponent } from './pages/in-order/in-order.component';
 import { NgforAsyncComponent } from './pages/ngfor-async/ngfor-async.component';
+import { PostsViewComponent } from './pages/posts-view/posts-view.component';
+import { PostsListComponent } from './pages/posts-view/components/posts-list/posts-list.component';
+import { PostDetailsComponent } from './pages/posts-view/components/post-details/post-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +20,9 @@ import { NgforAsyncComponent } from './pages/ngfor-async/ngfor-async.component';
     InputComponent,
     InOrderComponent,
     NgforAsyncComponent,
+    PostsViewComponent,
+    PostsListComponent,
+    PostDetailsComponent,
   ],
   imports: [
     BrowserModule,

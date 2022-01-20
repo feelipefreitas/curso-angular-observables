@@ -1,0 +1,5 @@
+<ul class="posts-list-container">
+    <li class="post" *ngFor="let post of postsList" (click)="postSelected(post)">
+        {{ post.title }}
+    </li>
+</ul>

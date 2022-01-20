@@ -5,6 +5,7 @@ import { Comp2Component } from './pages/comp2/comp2.component';
 import { InOrderComponent } from './pages/in-order/in-order.component';
 import { InputComponent } from './pages/input/input.component';
 import { NgforAsyncComponent } from './pages/ngfor-async/ngfor-async.component';
+import { PostsViewComponent } from './pages/posts-view/posts-view.component';
 
 const ROUTES: Routes = [
     {
@@ -31,6 +32,10 @@ const ROUTES: Routes = [
     {
         path: 'ngfor',
         component: NgforAsyncComponent
+    },
+    {
+        path: 'posts-view',
+        component: PostsViewComponent
     },
 ];
 
